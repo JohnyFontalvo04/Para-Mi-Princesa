@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Princesa Hermosa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
+        }
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #fff0f5;
+            border: 2px solid #ff99c8;
+        }
+        .carousel-inner img {
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        h1, h2 {
+            font-family: 'Great Vibes', cursive;
+            color: #d63384;
+        }
+        p {
+            font-size: 18px;
+            color: #5a2a02;
+        }
+        video {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        .heart {
+            position: fixed;
+            color: red;
+            font-size: 24px;
+            opacity: 0.7;
+            animation: floatUp 4s linear infinite;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+        /* Diseño de carta antigua */
+        .letter-card {
+            background: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+            background-color: #fdf5e6;
+            padding: 25px;
+            border: 4px solid #8b5a2b;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            font-family: 'Playfair Display', serif;
+            color: #3e2723;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center mt-4">
+        <h1 class="text-danger">Feliz San Valentín, Mi Amor ❤️</h1>
+        
+        <div class="card p-4 mt-4">
+            <h2>Nuestros Momentos 💖</h2>
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img src="/img/foto1.jpg" class="d-block w-100" alt="Foto 1"></div>
+                    <div class="carousel-item"><img src="img/foto2.jpg" class="d-block w-100" alt="Foto 2"></div>
+                    <div class="carousel-item"><img src="img/foto3.jpg" class="d-block w-100" alt="Foto 3"></div>
+                    <div class="carousel-item"><img src="img/foto4.jpg" class="d-block w-100" alt="Foto 4"></div>
+                    <div class="carousel-item"><img src="img/foto5.jpg" class="d-block w-100" alt="Foto 5"></div>
+                    <div class="carousel-item"><img src="img/foto6.jpg" class="d-block w-100" alt="Foto 6"></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="card letter-card p-4 mt-4">
+            <h2>Mi amor, mi vida entera..</h2>
+            <p class="text-start">
+                Desde el primer momento en que entraste en mi vida, supe que eras alguien especial, pero jamás imaginé que llegarías a ser mi todo. <br><br>
+                Hoy, en este día tan especial, quiero recordarte lo mucho que te amo y lo increíblemente feliz que me haces. <br><br>
+                Cada instante a tu lado es un regalo, cada sonrisa tuya ilumina mi mundo, y cada mirada tuya hace que mi corazón lata más fuerte. <br><br>
+                No importa cuánto tiempo pase, siempre voy a elegirte, siempre voy a amarte con todo mi corazón, porque tú eres mi hogar, mi felicidad, mi sueño hecho realidad. <br><br>
+                Feliz 14 de febrero, mi amor. Gracias por existir y por ser la persona maravillosa que eres. <br><br>
+                Te amo con toda mi alma, <b>Tu amor ❤️.</b>
+            </p>
+        </div>
+        
+        <div class="card p-4 mt-4">
+            <h2>Sere tu heroe favorito 🕷️❤️</h2>
+            <video id="video-preview" class="w-100 mt-3" controls>
+                <source src="img/video.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de videos.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        function createHeart() {
+            let heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.top = Math.random() * 100 + "vh";
+            heart.style.fontSize = Math.random() * 30 + 10 + "px";
+            heart.style.opacity = Math.random();
+            heart.style.position = "fixed";
+            heart.style.animation = "floatUp 4s linear";
+            document.body.appendChild(heart);
+
+            setTimeout(() => { heart.remove(); }, 4000);
+        }
+
+        setInterval(createHeart, 150);
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
